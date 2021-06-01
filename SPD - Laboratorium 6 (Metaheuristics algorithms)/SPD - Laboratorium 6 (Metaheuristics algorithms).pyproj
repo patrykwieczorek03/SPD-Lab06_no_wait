@@ -1,0 +1,59 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>1cb288ad-297d-477a-88a9-35fd763db9f6</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>SPD___Laboratorium_6__Metaheuristics_algorithms_.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>SPD - Laboratorium 6 (Metaheuristics algorithms)</Name>
+    <RootNamespace>SPD - Laboratorium 6 (Metaheuristics algorithms)</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ABC.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generator.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Johnson_algorithm.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Johnson_algorithm3.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Natural_permutation.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Natural_permutation_no_wait.py" />
+    <Compile Include="NEH_Algorithm.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Simulated_annealing_algorithm.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPD___Laboratorium_6__Metaheuristics_algorithms_.py" />
+    <Compile Include="Tabu_search_algorithm.py" />
+    <Compile Include="Tabu_search_no_wait_algorithm.py" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
