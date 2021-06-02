@@ -10,24 +10,24 @@ from Tabu_search_no_wait_algorithm import Tabu_search_no_wait_algorithm
 import random
 
 seed = 78
-tasks = 3
-machines = 3
+tasks = 20
+machines = 10
 
 str1 = "===================================================================\n"
-#print (str1 + "NATURAL PERMUTATION")
-#natural_permutation = Natural_permutation(seed, tasks, machines)
+print (str1 + "NATURAL PERMUTATION")
+natural_permutation = Natural_permutation(seed, tasks, machines)
 #print(natural_permutation)
-#print(natural_permutation.UB)
+print(natural_permutation.UB)
 
 #print (str1 + "JOHNSON ALGORITHM")
 #johnson3 = Johnson_algorithm3(seed, tasks, machines)
 #print(johnson3)
 
-#print (str1 + "NEH ALGORITHM")
-#neh = NEH_Algorithm(seed, tasks, machines)
-#neh.DoNEH()
+print (str1 + "NEH ALGORITHM")
+neh = NEH_Algorithm(seed, tasks, machines)
+neh.DoNEH()
 #print(neh)
-#print(neh.UB)
+print(neh.UB)
 
 #print (str1 + "NEH PLUS 4 ALGORITHM")
 #neh = NEH_Algorithm(seed, tasks, machines)
@@ -57,9 +57,9 @@ str1 = "===================================================================\n"
 
 #############################################################
 
-print (str1 + "NATURAL PERMUTATION")
-natural_permutation = Natural_permutation_no_wait(seed, tasks, machines)
-print(natural_permutation)
+#print (str1 + "NATURAL PERMUTATION")
+#natural_permutation = Natural_permutation_no_wait(seed, tasks, machines)
+#print(natural_permutation)
 #print(natural_permutation.UB)
 
 print (str1 + "TABU SEARCH")
@@ -68,4 +68,6 @@ tbnw.TabuSearch()
 print(tbnw)
 #print(tbnw.UB)
 
+print (str1 + "PORÓWNANIA")
+print("TABU SEARCH: " + str (round(((tbnw.UB-neh.UB)* 100.0/neh.UB),2 )) + "%")
 #############################################################
