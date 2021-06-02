@@ -66,19 +66,18 @@ class Natural_permutation_no_wait:
         #######################################################
         begin = 0
         for i in range(1,len(Pi)):
-            mistake = 0
             for j in range(0,self.m):
+                mistake = 0
                 if j < self.m-1:
                     begin = C[i-1][j+1] - self.P[Pi[i] - 1][j]
-                    if begin + mistake < C[i-1][j]:
+                    if begin < C[i-1][j]:
                         mistake = mistake + C[i-1][j] - begin
                     if j > 0:
                         if C[i][j-1] > (begin + mistake):
                             mistake = mistake + C[i][j-1] - begin - mistake
-                    C[i][j] = begin
+                    C[i][j] = begin + self.P[Pi[i] - 1][j]
                 else:
                     C[i][j] = C[i][j-1] + self.P[Pi[i] - 1][j]
-            for j in range(0,self.m):
                 C[i][j] = C[i][j] + mistake
         self.C = copy.deepcopy(C)
 
@@ -95,19 +94,18 @@ class Natural_permutation_no_wait:
         #######################################################
         begin = 0
         for i in range(1,len(Pi)):
-            mistake = 0
             for j in range(0,self.m):
+                mistake = 0
                 if j < self.m-1:
                     begin = C[i-1][j+1] - self.P[Pi[i] - 1][j]
-                    if begin + mistake < C[i-1][j]:
+                    if begin < C[i-1][j]:
                         mistake = mistake + C[i-1][j] - begin
                     if j > 0:
                         if C[i][j-1] > (begin + mistake):
                             mistake = mistake + C[i][j-1] - begin - mistake
-                    C[i][j] = begin
+                    C[i][j] = begin + self.P[Pi[i] - 1][j]
                 else:
                     C[i][j] = C[i][j-1] + self.P[Pi[i] - 1][j]
-            for j in range(0,self.m):
                 C[i][j] = C[i][j] + mistake
         return C[len(Pi)-1][self.m-1]
 

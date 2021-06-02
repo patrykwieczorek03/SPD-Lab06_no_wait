@@ -9,8 +9,8 @@ from Tabu_search_algorithm import Tabu_search_algorithm
 from Tabu_search_no_wait_algorithm import Tabu_search_no_wait_algorithm
 import random
 
-seed = 7866
-tasks = 5
+seed = 78
+tasks = 3
 machines = 3
 
 str1 = "===================================================================\n"
@@ -55,8 +55,17 @@ str1 = "===================================================================\n"
 #print("SIMULATED ANNEALING: " + str (round(((sa.UB-neh.UB)* 100.0/neh.UB),2)) + "%")
 #print("TABU SEARCH: " + str (round(((tb.UB-neh.UB)* 100.0/neh.UB),2 )) + "%")
 
+#############################################################
+
+print (str1 + "NATURAL PERMUTATION")
+natural_permutation = Natural_permutation_no_wait(seed, tasks, machines)
+print(natural_permutation)
+#print(natural_permutation.UB)
+
 print (str1 + "TABU SEARCH")
 tbnw = Tabu_search_no_wait_algorithm(seed, tasks, machines)
 tbnw.TabuSearch()
 print(tbnw)
 #print(tbnw.UB)
+
+#############################################################
