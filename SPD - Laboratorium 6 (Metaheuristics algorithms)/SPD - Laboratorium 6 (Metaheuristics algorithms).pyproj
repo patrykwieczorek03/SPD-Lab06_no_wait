@@ -37,6 +37,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Natural_permutation_no_wait.py" />
+    <Compile Include="NEH_Algorithm_no_wait.py" />
     <Compile Include="NEH_Algorithm.py">
       <SubType>Code</SubType>
     </Compile>

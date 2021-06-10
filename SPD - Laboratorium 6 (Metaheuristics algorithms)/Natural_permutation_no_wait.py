@@ -120,12 +120,22 @@ class Natural_permutation_no_wait:
         for i  in range(1, self.m):
             C[0][i] = C[0][i-1] + self.P[Pi[0] - 1][i]
             
+        #######################################################
+        begin = 0
         for i in range(1,len(Pi)):
-            C[i][0] = C[i-1][0] + self.P[Pi[i] - 1][0]
-
-        for a in range(1,self.m):
-            for i in range(1,len(Pi)):
-                C[i][a] = max(C[i-1][a],C[i][a-1]) + self.P[Pi[i] - 1][a]
+            for j in range(0,self.m):
+                mistake = 0
+                if j < self.m-1:
+                    begin = C[i-1][j+1] - self.P[Pi[i] - 1][j]
+                    if begin < C[i-1][j]:
+                        mistake = mistake + C[i-1][j] - begin
+                    if j > 0:
+                        if C[i][j-1] > (begin + mistake):
+                            mistake = mistake + C[i][j-1] - begin - mistake
+                    C[i][j] = begin + self.P[Pi[i] - 1][j]
+                else:
+                    C[i][j] = C[i][j-1] + self.P[Pi[i] - 1][j]
+                C[i][j] = C[i][j] + mistake
         return C
 
     def CalculateSmax(self):
